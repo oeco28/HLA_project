@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""find_unclassified_ONTBarcodes.py: Assign unclassified ONT reads to appropriate barcode while allowing for mismatches"""
+"""findBarcodes.py: Assign unclassified ONT reads to appropriate barcode while allowing for mismatches"""
 
 __author__      = "Omar E. Cornejo"
 __copyright__   = "Copyright 2024, The HLA/Microbiome project"
@@ -17,21 +17,22 @@ from Bio import SeqIO
 import numpy as np
 import argparse
 
+
 parser=argparse.ArgumentParser(
-    description='''The script will identify sequences in the unclassified pile that match the provided barcode''', epilog='''The intended usage is python find_unclassified_ONTBarcodes.py barcode <string> max_dist <integer> query_file <string> output_file <string>''')
-    
+    description='''The script will identify sequences in the unclassified pile that match the provided barcode''',
+    epilog='''The intended usage is python find_unclassified_ONTBarcodes.py barcode <string> max_dist <integer> query_file <string> output_file <string>''')
+
+
 #parser.add_argument('', type=int, default=242, help='Barcode sequence')
 #parser.add_argument('bar', nargs='*', default=242, help='maximum edit distance')
 #parser.add_argument('', type=int, default=242, help='input file')
 #parser.add_argument('', type=int, default=242, help='output file')
-#args=parser.parse_args()
-
-
+args=parser.parse_args()
 barcode = sys.argv[1]
 my_dist = int(sys.argv[2])
 myquery_file = sys.argv[3]
 output_file = sys.argv[4]
-output_index = print(output_file,".index",sep="")
+output_index = output_file + ".index"
 
 print("Analyzing barcode:", barcode)
 
@@ -53,7 +54,7 @@ myfindings = [] # Create an empty list to store the results of the search
 
 def barcode_search(query):
         # Performs the search on each sequence
-        return myfindings.append(find_near_matches(barcode, query, max_l_dist=my_dist))
+    return myfindings.append(find_near_matches(barcode, query, max_l_dist = my_dist))
 
 processed_search = [barcode_search(number) for number in dna_sequences]
 
