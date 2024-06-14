@@ -28,7 +28,7 @@ parser=argparse.ArgumentParser(
 
 
 barcode = sys.argv[1]
-my_dist = sys.argv[2]
+my_dist = int(sys.argv[2])
 myquery_file = sys.argv[3]
 output_file = sys.argv[4]
 output_index = print(output_file,".index",sep="")
