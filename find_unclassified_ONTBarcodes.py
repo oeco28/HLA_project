@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 
+# This is a script that requires installing several dependencies: numpy, biopython, fuzzysearch
+# pip install numpy
+# pip install biopython
+# pip install fuzzysearch
+
 """findBarcodes.py: Assign unclassified ONT reads to appropriate barcode while allowing for mismatches"""
 
 __author__      = "Omar E. Cornejo"
