@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""findBarcodes.py: Assign unclassified ONT reads to appropriate barcode while allowing for mismatches"""
+"""find_unclassified_ONTBarcodes.py: Assign unclassified ONT reads to appropriate barcode while allowing for mismatches"""
 
 __author__      = "Omar E. Cornejo"
 __copyright__   = "Copyright 2024, The HLA/Microbiome project"
@@ -17,9 +17,9 @@ from Bio import SeqIO
 import numpy as np
 import argparse
 
-#parser=argparse.ArgumentParser(
-    description='''The script will identify sequences in the unclassified pile that match the provided barcode''')
-
+parser=argparse.ArgumentParser(
+    description='''The script will identify sequences in the unclassified pile that match the provided barcode''', epilog='''The intended usage is python find_unclassified_ONTBarcodes.py barcode <string> max_dist <integer> query_file <string> output_file <string>''')
+    
 #parser.add_argument('', type=int, default=242, help='Barcode sequence')
 #parser.add_argument('bar', nargs='*', default=242, help='maximum edit distance')
 #parser.add_argument('', type=int, default=242, help='input file')
