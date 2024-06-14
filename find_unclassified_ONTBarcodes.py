@@ -20,7 +20,7 @@ import argparse
 
 parser=argparse.ArgumentParser(
     description='''The script will identify sequences in the unclassified pile that match the provided barcode''',
-    epilog='''The intended usage is python find_unclassified_ONTBarcodes.py barcode <string> max_dist <integer> query_file <string> output_file <string>''')
+    epilog='''The usage is: $python find_unclassified_ONTBarcodes.py barcode <string> max_dist <integer> query_file <string> output_file <string>''')
 
 
 #parser.add_argument('', type=int, default=242, help='Barcode sequence')
